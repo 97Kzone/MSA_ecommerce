@@ -34,3 +34,11 @@ eureka:
 
 greeting:
   message: Simple E-commerce
+
+logging:
+  level:
+    com.example.userservice: DEBUG
+
+token:
+  expiration_time: 86400000 # 1day
+  secret: 97kzone
