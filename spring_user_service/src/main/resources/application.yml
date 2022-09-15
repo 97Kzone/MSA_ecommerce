@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: user-service
+  cloud:
+    config:
+      name: ecommerce
+  config:
+    import: "optional:configserver:http://localhost:8888/"
   datasource:
     url: jdbc:h2:tcp://localhost/~/msa
     username: sa
@@ -39,6 +44,12 @@ logging:
   level:
     com.example.userservice: DEBUG
 
-token:
-  expiration_time: 86400000 # 1day
-  secret: 97kzone
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans
+
+#token:
+#  expiration_time: 86400000 # 1day
+#  secret: 97kzone

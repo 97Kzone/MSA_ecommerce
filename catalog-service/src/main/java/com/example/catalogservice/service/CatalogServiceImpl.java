@@ -16,11 +16,13 @@ public class CatalogServiceImpl implements CatalogService {
 
     @Autowired
     public CatalogServiceImpl(CatalogRepository catalogRepository) {
+
         this.catalogRepository = catalogRepository;
     }
 
     @Override
     public Iterable<CatalogEntity> getAllCatalogs() {
+
         return catalogRepository.findAll();
     }
 }
