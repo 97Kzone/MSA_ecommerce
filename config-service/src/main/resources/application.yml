@@ -4,10 +4,23 @@ server:
 spring:
   application:
     name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  profiles:
+    active: native
   cloud:
     config:
       server:
         native:
-          search-locations: file:///C:\\Users\\rkdeh\\msa_ecommerce\\config-service
+          search-locations: file:///${user.home}/native-file-repo
         git:
-          uri: file:////C:\\Users\\rkdeh\\msa_ecommerce\\git-local-repo
+          uri: https://github.com/97Kzone/msa-ecommerce-config
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
