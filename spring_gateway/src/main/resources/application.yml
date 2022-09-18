@@ -17,7 +17,8 @@ spring:
     username: guest
     password: guest
   config:
-    import: "optional:configserver:http://localhost:8888/"
+    import:
+    - classpath:/bootstrap.yml
   profiles:
     active: prod
   cloud:
@@ -99,5 +100,5 @@ management:
     web:
       exposure:
         include: refresh, health, beans, httptrace, busrefresh
-token:
-  secret: 97kzone
+#token:
+#  secret: 97kzone

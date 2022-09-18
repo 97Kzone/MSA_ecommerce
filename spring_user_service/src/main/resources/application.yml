@@ -13,14 +13,15 @@ spring:
     config:
       name: ecommerce
   config:
-    import: "optional:configserver:http://localhost:8888/"
-  profiles:
-    active: dev
-  datasource:
-    url: jdbc:h2:tcp://localhost/~/msa
-    username: sa
-    password: 12
-    driver-class-name: org.h2.Driver
+    import:
+      - classpath:/bootstrap.yml
+#  profiles:
+#    active: dev
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/msa
+#    username: sa
+#    password: 12
+#    driver-class-name: org.h2.Driver
   h2:
     console:
       enabled: true

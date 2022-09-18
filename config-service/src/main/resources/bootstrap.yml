@@ -1,0 +1,6 @@
+encrypt:
+# key: 97kzonewithencrypt
+  key-store:
+    location: file:///${user.home}/msa_keystore/apiEncryptionKey.jks
+    password: test1234
+    alias: apiEncryptionKey
